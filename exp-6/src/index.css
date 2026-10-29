@@ -1,0 +1,106 @@
+:root {
+  font-family: Arial, sans-serif;
+  color: #222;
+  background-color: #f4f6f8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.navbar {
+  align-items: center;
+  background-color: #222;
+  color: white;
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  padding: 15px 30px;
+}
+
+.navbar h2 {
+  margin: 0;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  text-decoration: underline;
+}
+
+.page {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+form,
+.student-form {
+  margin: 20px auto;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+input {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 10px;
+  padding: 10px;
+  width: min(250px, 90%);
+}
+
+button {
+  background-color: #222;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  padding: 10px 20px;
+}
+
+button:hover {
+  background-color: #444;
+}
+
+.student-list,
+.technology-list {
+  padding: 0;
+}
+
+.student-list li,
+.technology-list li {
+  list-style: none;
+  padding: 8px;
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .nav-links {
+    justify-content: center;
+  }
+
+  .page {
+    padding: 25px 15px;
+  }
+}

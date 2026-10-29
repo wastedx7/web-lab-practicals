@@ -1,0 +1,68 @@
+<!-- ============================================================== -->
+<!-- Experiment Part B: Factorial Calculation using prompt & alert -->
+<!-- ============================================================== -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Factorial Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #222;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .card {
+      background: #fff;
+      padding: 30px;
+      width: 280px;
+      text-align: center;
+      border-radius: 15px;
+    }
+    h2 {
+      color: #444;
+    }
+    button {
+      background: #28a745;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #1e7e34;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Factorial Finder</h2>
+    <button onclick="findFactorial()">Calculate</button>
+  </div>
+
+  <script>
+    function findFactorial() {
+      let input = prompt("Enter a number:");
+      if (input === null) return; // User cancelled prompt
+      
+      let n = parseInt(input);
+      if (isNaN(n) || n < 0) {
+        alert("Please enter a valid non-negative integer.");
+        return;
+      }
+      
+      let factorial = 1;
+      for (let i = 1; i <= n; i++) {
+        factorial *= i;
+      }
+      alert("Factorial of " + n + " is " + factorial);
+    }
+  </script>
+</body>
+</html>

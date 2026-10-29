@@ -1,0 +1,91 @@
+<!-- ============================================================== -->
+<!-- Experiment Part D: Dynamic Addition of N Numbers               -->
+<!-- ============================================================== -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Addition</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(120deg, #84fab0, #8fd3f4);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .box {
+      background: white;
+      padding: 25px;
+      width: 300px;
+      text-align: center;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+    input {
+      padding: 8px;
+      margin: 5px 0;
+      width: 80%;
+      box-sizing: border-box;
+    }
+    button {
+      padding: 10px 18px;
+      background: #673ab7;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    button:hover {
+      background: #45208a;
+    }
+    #result {
+      margin-top: 15px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>Add Numbers</h2>
+    <label for="count">Number of values:</label>
+    <br>
+    <input type="number" id="count" placeholder="Count" min="1">
+    <div id="numberInputs"></div>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    const countInput = document.getElementById("count");
+    const numberInputs = document.getElementById("numberInputs");
+    const result = document.getElementById("result");
+
+    countInput.addEventListener("change", function () {
+      let count = parseInt(this.value);
+      numberInputs.innerHTML = "";
+      result.innerHTML = "";
+
+      if (isNaN(count) || count <= 0) return;
+
+      for (let i = 1; i <= count; i++) {
+        numberInputs.innerHTML += `<input class="num" type="number" placeholder="Number ${i}"><br>`;
+      }
+      numberInputs.innerHTML += `<button onclick="calculateSum()">Add</button>`;
+    });
+
+    function calculateSum() {
+      let nums = document.querySelectorAll(".num");
+      let sum = 0;
+      nums.forEach(n => {
+        sum += Number(n.value);
+      });
+      result.innerHTML = "Sum = " + sum;
+    }
+  </script>
+</body>
+</html>

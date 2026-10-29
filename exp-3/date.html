@@ -1,0 +1,51 @@
+<!-- ============================================================== -->
+<!-- Experiment Part A: Display Date in Textbox using onclick()    -->
+<!-- ============================================================== -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Display Date</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+      background: #eee;
+    }
+    .container {
+      background: white;
+      width: 300px;
+      margin: auto;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    input {
+      width: 90%;
+      padding: 8px;
+      margin: 15px 0;
+      box-sizing: border-box;
+    }
+    button {
+      padding: 8px 15px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Display Current Date</h2>
+    <input type="text" id="dateBox" placeholder="Date will appear here" readonly>
+    <br>
+    <button onclick="displayDate()">Display Date</button>
+  </div>
+
+  <script>
+    function displayDate() {
+      document.getElementById("dateBox").value = new Date();
+    }
+  </script>
+</body>
+</html>
